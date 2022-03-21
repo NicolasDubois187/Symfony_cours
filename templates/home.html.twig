@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %} Welcome ! homepage {% endblock %}
+{% block body %}
+    {% include 'commons/_header.html.twig' %}
+    <main>
+        <h1>Home page</h1>
+        <a href="{{ path('students') }}">Aller voir les élèves</a>
+    </main>
+    {% include 'commons/_footer.html.twig' %}
+{% endblock %}

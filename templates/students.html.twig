@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<main>
+    <h1>Les Elèves</h1>
+    <a href="{{ path('home') }}">retour à l'accueil</a>
+
+    <div class="studentContainer">
+        <h2>Elèves inscrits</h2>
+        {% for student in students %}
+
+            <h2 class="name">{{ student.lastname }} {{ student.firstname }}</h2>
+            <span class="age">{{ student.age }}</span>
+            <span class="phone">{{ student.phone }}</span>
+            <span class="team">{{ student.team }}</span>
+            <span class="firstQuarter">{{ student.firstQuarter }}</span>
+            <span class="secondQuarter">{{ student.secondQuarter }}</span>
+            <span class="lastQuarter">{{ student.lastQuarter }}</span>
+            <a href="{{ path('student', {'id' : student.id}) }}">Voir l'élève</a>
+            <a href="{{ path('changeStatus', {'id' : student.id}) }}"><img src="./../assets/img/cross.svg" alt=""></a>
+            <a href="{{ path('updateStudent', {'id' : student.id}) }}">Modifier</a>
+
+        {% endfor %}
+    </div>
+
+    <div class="studentContainer">
+        <h2>Elèves plus inscrits</h2>
+        {% for student in studentsOff %}
+
+            <h2 class="name">{{ student.lastname }} {{ student.firstname }}</h2>
+            <span class="age">{{ student.age }}</span>
+            <span class="phone">{{ student.phone }}</span>
+            <span class="team">{{ student.team }}</span>
+            <span class="firstQuarter">{{ student.firstQuarter }}</span>
+            <span class="secondQuarter">{{ student.secondQuarter }}</span>
+            <span class="lastQuarter">{{ student.lastQuarter }}</span>
+            <a href="{{ path('student', {'id' : student.id}) }}">Voir l'élève</a>
+            <a href="{{ path('changeStatus', {'id' : student.id}) }}"><img src="./../assets/img/uparrow.svg" alt=""></a>
+            <a href="{{ path('deleteStudent', {'id' : student.id}) }}"><img src="./../assets/img/garbage.svg" alt=""></a>
+            <a href="{{ path('updateStudent', {'id' : student.id}) }}">Modifier</a>
+
+        {% endfor %}
+    </div>
+    <h2>Ajouter un élève</h2>
+    <a href="{{ path('addStudent') }}">Ajouter un élève</a>
+</main>
+
+
+</body>
+</html>

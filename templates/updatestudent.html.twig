@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Modifier l' élève {{ student.lastname }} {{ student.firstname }}</h1>
+<div>
+    {{ form_start(studentForm) }}
+    <div class="left">
+        {{ form_label(studentForm.firstname) }}
+        {{ form_widget(studentForm.firstname, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.firstname)}}
+
+        {{ form_label(studentForm.lastname) }}
+        {{ form_widget(studentForm.lastname, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.lastname)}}
+
+        {{ form_label(studentForm.age) }}
+        {{ form_widget(studentForm.age, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.age)}}
+
+        {{ form_label(studentForm.phone) }}
+        {{ form_widget(studentForm.phone, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.phone)}}
+
+        {{ form_label(studentForm.team) }}
+        {{ form_widget(studentForm.team, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.team)}}
+    </div>
+    <div class="right">
+        {{ form_label(studentForm.firstQuarter) }}
+        {{ form_widget(studentForm.firstQuarter, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.firstQuarter)}}
+
+        {{ form_label(studentForm.secondQuarter) }}
+        {{ form_widget(studentForm.secondQuarter, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.secondQuarter)}}
+
+        {{ form_label(studentForm.lastQuarter) }}
+        {{ form_widget(studentForm.lastQuarter, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.lastQuarter)}}
+
+        {{ form_label(studentForm.active) }}
+        {{ form_widget(studentForm.active, { 'attr' : {'class':'toto' }}) }}
+        {{ form_errors(studentForm.active)}}
+    </div>
+    <div class="btn">
+        {{ form_label(studentForm.envoyer) }}
+        {{ form_widget(studentForm.envoyer, { 'attr' : {'class':'toto' }}) }}
+    </div>
+    {{ form_end(studentForm) }}
+</div>
+
+</body>
+    <style>
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .left, .right {
+            display: grid;
+        }
+</style>
+</html>
